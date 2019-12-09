@@ -1,0 +1,23 @@
+.side_bar
+  -#画面上段
+  .side_bar__user_name
+    -#ユーザー表示（名前とアイコンに分割）
+    .side_bar__user_name__top_items
+      .side_bar__user_name__top_items__name 
+        %p.user_name tomoyuki
+      .side_bar__user_name__top_items__icons
+        .side_bar__user_name__top_items__icons__create_group
+          = link_to "#" do
+            %li.far.fa-edit
+        .side_bar__user_name__top_items__icons__edit_account
+          = link_to "#" do
+            %li.fas.fa-cog
+  -#画面下段
+  .side_bar__group_list
+    -#グループ表示（名前とメッセージに分割）
+    .side_bar__group_list__group_items
+      .side_bar__group_list__group_items__name
+        %p.group_name group1
+      .side_bar__group_list__group_items__message
+        %p.group_message Hello, World!!
+
