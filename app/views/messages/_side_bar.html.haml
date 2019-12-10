@@ -4,13 +4,14 @@
     -#ユーザー表示（名前とアイコンに分割）
     .side_bar__user_name__top_items
       .side_bar__user_name__top_items__name 
-        %p.user_name tomoyuki
+        %p.user_name
+          = current_user.name
       .side_bar__user_name__top_items__icons
         .side_bar__user_name__top_items__icons__create_group
           = link_to "#" do
             %li.far.fa-edit
         .side_bar__user_name__top_items__icons__edit_account
-          = link_to "#" do
+          = link_to edit_user_path(current_user) do
             %li.fas.fa-cog
   -#画面下段
   .side_bar__group_list
