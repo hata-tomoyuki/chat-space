@@ -1,1 +1,47 @@
-zzzzzzzzzzzzz
+.chat_main
+  -#画面上段
+  .chat_main__group_info        
+    -#左側要素（グループ名、メンバー名）
+    .chat_main__group_info__left_item
+      -#グループ名
+      .chat_main__group_info__left_item__name
+        %p.current_group group1
+      -#メンバー名
+      .chat_main__group_info__left_item__member
+        %p.text Member:
+        %p.member  tomoyuki
+    -#右側要素（編集ボタン）
+    .chat_main__group_info__right_item
+      -#編集ボタン
+      .chat_main__group_info__right_item__edit_btn
+        %li.header-link
+          %a{:href => "#"} Edit
+  -#画面中段
+  .chat_main__message_list
+    -#メッセージ本体（タイトルと本文に分割）
+    .chat_main__message_list__body
+      -#タイトル（送信者と送信日時に分割）
+      .chat_main__message_list__body__tittle
+        -#送信者
+        .chat_main__message_list__body__tittle__name
+          %p.user tomoyuki
+        -#送信日時
+        .chat_main__message_list__body__tittle__time
+          %p.date 2019/12/8(Sun) 14:08:32
+      -#本文
+      .chat_main__message_list__body__content
+        %p.message Hello, World!!
+  -#画面下段
+  .chat_main__message_form
+    -#メッセージフォーム（入力フォームとSendボタンに分割）
+    .chat_main__message_form__content
+      -#入力フォーム
+      .chat_main__message_form__content__input_box
+        %input.chat_main__message_form__content__input_box__text{:placeholder => "type a message", :type => "text"}/
+        %label{class: "chat_main__message_form__content__input_box__image "}
+          = icon('fas', 'image')
+          %input{type: "file"}
+      -#Sendボタン
+      %input#submit_button{:name => "submit", :type => "submit", :value => "Send "}/
+
+
