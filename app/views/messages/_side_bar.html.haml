@@ -8,7 +8,7 @@
           = current_user.name
       .side_bar__user_name__top_items__icons
         .side_bar__user_name__top_items__icons__create_group
-          = link_to "#" do
+          = link_to new_group_path do
             %li.far.fa-edit
         .side_bar__user_name__top_items__icons__edit_account
           = link_to edit_user_path(current_user) do
@@ -16,9 +16,11 @@
   -#画面下段
   .side_bar__group_list
     -#グループ表示（名前とメッセージに分割）
-    .side_bar__group_list__group_items
-      .side_bar__group_list__group_items__name
-        %p.group_name group1
-      .side_bar__group_list__group_items__message
-        %p.group_message Hello, World!!
+    - current_user.groups.each do |group|
+      .side_bar__group_list__group_items
+        = link_to group_messages_path(group) do
+          .side_bar__group_list__group_items__name
+            = group.name
+          .side_bar__group_list__group_items__message
+            %p.group_message メッセージはまだありません。
 
