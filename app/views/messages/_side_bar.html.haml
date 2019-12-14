@@ -22,5 +22,6 @@
           .side_bar__group_list__group_items__name
             = group.name
           .side_bar__group_list__group_items__message
-            %p.group_message メッセージはまだありません。
+            %p.group_message
+              = group.show_last_message
 
