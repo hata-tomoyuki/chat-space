@@ -1,39 +1,39 @@
 $(function(){
   var buildHTML = function(message) {
     if (message.image) {
-      var html =  `<div class="message" data-message-id=` + message.id + `>` +
-                    `<div class="upper-message">` +
-                      `<div class="upper-message__name">` +
-                        message.name +
-                      `</div>` +
-                      `<div class="upper-message__time">` +
-                        message.date +
-                      `</div>` +
-                    `</div>` +
-                    `<div class="lower-message">` +
-                      `<p class="lower-message__content">` +
-                        message.text +
-                      `</p>` +
-                      `<img class="lower-message__image">` +
-                      `<img class="lower-message__image", src=` + message.image + `>` +
-                    `</div>` +
-                  `</div>`
+      var html =  `<div class="message" data-message-id=${message.id}>
+                    <div class="upper-message">
+                      <div class="upper-message__name">
+                        ${message.name}
+                      </div>
+                      <div class="upper-message__time">
+                        ${message.date}
+                      </div>
+                    </div>
+                    <div class="lower-message">
+                      <p class="lower-message__content">
+                        ${message.text}
+                      </p>
+                      <img class="lower-message__image">
+                      <img class="lower-message__image", src=${message.image}>
+                    </div>
+                  </div>`
     } else {
-      var html =  `<div class="message" data-message-id=` + message.id + `>` +
-                    `<div class="upper-message">` +
-                      `<div class="upper-message__name">` +
-                        message.name +
-                      `</div>` +
-                      `<div class="upper-message__time">` +
-                        message.date +
-                      `</div>` +
-                    `</div>` +
-                    `<div class="lower-message">` +
-                      `<p class="lower-message__content">` +
-                        message.text +
-                      `</p>` +
-                    `</div>` +
-                  `</div>`
+      var html =  `<div class="message" data-message-id=${message.id}>
+                    <div class="upper-message">
+                      <div class="upper-message__name">
+                        ${message.name}
+                      </div>
+                      <div class="upper-message__time">
+                        ${message.date}
+                      </div>
+                    </div>
+                    <div class="lower-message">
+                      <p class="lower-message__content">
+                        ${message.text}
+                      </p>
+                    </div>
+                  </div>`
     };
     return html;
   };
