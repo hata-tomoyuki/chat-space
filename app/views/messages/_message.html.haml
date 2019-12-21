@@ -1,11 +1,11 @@
-.message
+.message{data: {message: {id: message.id}}}
   .upper-message
     -#送信者
     .upper-message__name
       = message.user.name
       -#送信日時
     .upper-message__time
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
+      = message.created_at.to_s
     -#本文
   .lower-message
     - if message.text.present?
