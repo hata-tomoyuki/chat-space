@@ -30,7 +30,7 @@ $(function() {
     $(`#${userId}`).append(html);
   }
   $('#user-search-field').on("keyup", function(){
-    var input = $('#user_search_field').val();
+    var input = $('#user-search-field').val();
     $.ajax({
       type: 'GET',
       url: '/users',
